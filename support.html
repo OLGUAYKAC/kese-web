@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destek ve İletişim | Kese - Bütçe ve Harcama Takibi</title>
+    <style>
+        :root {
+            --primary: #5E5CE6;
+            --primary-gradient: linear-gradient(135deg, #5E5CE6 0%, #007AFF 100%);
+            --bg: #0D0F17;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #FFFFFF;
+            --text-secondary: #A0A5B5;
+            --accent-green: #34C759;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 48px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .contact-card {
+            background: rgba(94, 92, 230, 0.1);
+            border: 1px solid rgba(94, 92, 230, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .contact-info h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .contact-btn {
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 32px 0 16px;
+            color: #FFFFFF;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 14px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .footer {
+            margin-top: 48px;
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 12px; }
+            .container { padding: 24px 20px; border-radius: 16px; }
+            h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Kese Destek ve Yardım</h1>
+            <p class="subtitle">Her türlü soru, geri bildirim veya teknik yardım için buradayız.</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-info">
+                <h3>Doğrudan İletişim</h3>
+                <p>Sorularınızı ve hata bildirimlerinizi iletin, en kısa sürede yanıtlayalım.</p>
+            </div>
+            <a href="mailto:aykac.olgu@gmail.com?subject=Kese%20Destek%20Talebi" class="contact-btn">E-posta Gönder</a>
+        </div>
+
+        <h2>Sıkça Sorulan Sorular (SSS)</h2>
+
+        <div class="faq-item">
+            <h4>Verilerim nerede saklanıyor, başkası görebilir mi?</h4>
+            <p>Tüm gelir, gider ve bütçe verileriniz yalnızca kendi iPhone'unuzda Apple SwiftData ile şifreli olarak saklanır. Hiçbir sunucumuza gönderilmez; geliştiriciler dahil hiç kimse harcamalarınızı göremez.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Telefonumu değiştirirsem verilerimi nasıl aktarırım?</h4>
+            <p>Ayarlar > Veri Yönetimi ekranından "CSV Olarak Dışa Aktar" butonuna basarak tüm kayıtlarınızı içeren bir CSV dosyası alabilirsiniz. Yeni cihazınızda yine Ayarlar üzerinden bu dosyayı "CSV'den İçe Aktar" seçeneğiyle kolayca yükleyebilirsiniz.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Kredi kartı ekstre ve limit takibi nasıl çalışıyor?</h4>
+            <p>Ayarlar > Kredi Kartlarım ekranından kartınızın limitini, hesap kesim gününü ve son ödeme gününü girin. Kredi kartı ile yaptığınız harcamalar otomatik olarak o ayki ekstreye işlenir ve kalan limitiniz anlık olarak güncellenir.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Face ID kilidi açılmıyor, ne yapmalıyım?</h4>
+            <p>Face ID birkaç denemede algılanmazsa iPhone'unuz otomatik olarak cihaz parolanızı (ekran kilidi şifresi) soracaktır. Parolanızı girerek güvenli şekilde erişim sağlayabilirsiniz.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Birden fazla kategoriye ait tek bir harcamayı nasıl kaydederim?</h4>
+            <p>Harcama ekleme ekranında "Harcamayı Böl (Split)" seçeneğini aktif ederek tek bir fiş veya faturayı farklı kategorilere (örneğin Market + Temizlik) tutarlarını bölerek kaydedebilirsiniz.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Uygulama tamamen ücretsiz mi? Reklam var mı?</h4>
+            <p>Evet, Kese tamamen reklamsız ve kullanıcı gizliliğine odaklı olarak tasarlanmıştır. Verileriniz satılmaz, reklam gösterilmez.</p>
+        </div>
+
+        <div class="footer">
+            <span>&copy; 2026 Kese. Tüm hakları saklıdır.</span>
+            <div>
+                <a href="privacy.html">Gizlilik Politikası</a> | 
+                <a href="index.html">Ana Sayfa</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

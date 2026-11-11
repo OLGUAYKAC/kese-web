@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kese - Akıllı Gelir, Gider ve Bütçe Takibi</title>
+    <style>
+        :root {
+            --primary: #5E5CE6;
+            --primary-gradient: linear-gradient(135deg, #5E5CE6 0%, #007AFF 100%);
+            --bg: #0A0C14;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #FFFFFF;
+            --text-secondary: #9499AD;
+            --accent-green: #34C759;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 24px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .hero {
+            max-width: 900px;
+            margin: 60px auto 40px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(94, 92, 230, 0.12);
+            color: #A29BFE;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(94, 92, 230, 0.25);
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: #FFFFFF;
+            padding: 14px 32px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 10px 24px rgba(94, 92, 230, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(94, 92, 230, 0.45);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: #FFFFFF;
+            padding: 14px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .features {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(94, 92, 230, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #7D7AFF;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+            padding: 36px 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        footer .links {
+            margin-bottom: 16px;
+        }
+
+        footer .links a {
+            color: var(--text-secondary);
+            margin: 0 14px;
+            text-decoration: none;
+        }
+
+        footer .links a:hover {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 38px; }
+            .hero p { font-size: 17px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand">Kese</a>
+        <div class="nav-links">
+            <a href="#features">Özellikler</a>
+            <a href="privacy.html">Gizlilik Politikası</a>
+            <a href="support.html">Destek & SSS</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-badge">iOS 17+ İçin Optimize Edildi</div>
+        <h1>Finansal Kontrolü Cihazınıza Geri Getirin</h1>
+        <p>Kese; harcamalarınızı kategorize eden, kredi kartı ekstre dönemlerinizi izleyen ve verilerinizi yalnızca sizin cihazınızda şifreleyen modern bütçe asistanınızdır.</p>
+        <div class="cta-group">
+            <a href="support.html" class="btn-primary">Kullanım & Destek</a>
+            <a href="privacy.html" class="btn-secondary">Gizlilik Politikası</a>
+        </div>
+    </div>
+
+    <div class="features" id="features">
+        <div class="feature-card">
+            <div class="feature-icon">&#128274;</div>
+            <h3>%100 Yerel ve Gizli</h3>
+            <p>Finansal verileriniz sunuculara gitmez. Cihazınızda SwiftData ile korunur, Face ID / Touch ID ile güvenle kilitlenir.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">&#128179;</div>
+            <h3>Kredi Kartı & Limit Takibi</h3>
+            <p>Hesap kesim günü, son ödeme tarihi, kalan limit ve ekstre harcamalarınızı kart bazında zahmetsizce yönetin.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">&#9986;&#65039;</div>
+            <h3>Harcama Bölme (Split)</h3>
+            <p>Tek bir fiş veya faturayı farklı kategorilere paylaştırarak bütçenizi gerçekçi şekilde kontrol edin.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Kategori Bazlı Limitler</h3>
+            <p>Market, yemek, faturalar veya eğlence kategorilerine özel bütçe tutarları belirleyin; aşım durumunda anlık uyarı alın.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">&#128229;</div>
+            <h3>CSV İçe & Dışa Aktarma</h3>
+            <p>Banka dökümlerinizi CSV ile içeri aktarın veya tüm geçmişinizi Excel uyumlu olarak dışa aktararak arşivleyin.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">&#128276;</div>
+            <h3>Akıllı Hatırlatıcı</h3>
+            <p>Her akşam belirlenen saatte harcama hatırlatma bildirimi alarak bütçe disiplininizi her zaman taze tutun.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="links">
+            <a href="privacy.html">Gizlilik Politikası</a>
+            <a href="support.html">Destek & Yardım</a>
+            <a href="mailto:aykac.olgu@gmail.com">İletişim</a>
+        </div>
+        <div>&copy; 2026 Kese (Kuruş). Tüm hakları saklıdır.</div>
+    </footer>
+</body>
+</html>
